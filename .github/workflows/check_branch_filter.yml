@@ -1,0 +1,10 @@
+name: Check filter on branch creation
+on:
+  create:
+jobs:
+  EXEC:
+    runs-on: ubuntu-latest
+    if: contains('ref/head/release/', github.ref)
+    steps:
+      - name: Echo branch name
+        run: echo "{{ github.ref }}"
