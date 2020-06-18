@@ -4,7 +4,7 @@ on:
 jobs:
   EXEC:
     runs-on: ubuntu-latest
-    #    if: startsWith('ref/head/release/', github.ref)
+    if: startsWith('ref/heads/release/', github.ref)
     steps:
       - name: Echo branch name
         run: echo ${{ github.ref }}
